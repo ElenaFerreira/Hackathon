@@ -1,6 +1,5 @@
 "use client";
 import { SearchIcon, ArrowRightIcon, ChevronRightIcon } from "lucide-react";
-import { CTAButton } from "../components/CTAButton";
 import YouTube from "react-youtube";
 
 export default function Home() {
