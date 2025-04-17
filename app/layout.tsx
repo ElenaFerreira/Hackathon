@@ -4,13 +4,13 @@ import { Header } from "@/components/Header";
 import { Navigation } from "@/components/Navigation";
 
 export const metadata: Metadata = {
-  title: "Refashion Repair",
+  title: "Re_pair",
   description: "Join the movement to repair your clothes and shoes",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <head>
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#10b981" />

@@ -1,94 +1,96 @@
-import React from "react";
-import { ArrowRightIcon, TrendingUpIcon, LeafIcon, BriefcaseIcon } from "lucide-react";
+"use client";
+import { SearchIcon, ArrowRightIcon, ChevronRightIcon } from "lucide-react";
 import { CTAButton } from "../components/CTAButton";
-import { FeaturedCard } from "../components/FeaturedCard";
+import YouTube from "react-youtube";
 
 export default function Home() {
   return (
     <div className="px-4 py-6 space-y-8 max-w-md mx-auto w-full">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl p-6 text-white">
-        <h1 className="text-2xl font-bold mb-2">Repair. Reuse. Revive.</h1>
-        <p className="mb-6 opacity-90">Join the movement to give your clothes a second life and discover sustainable career paths.</p>
-        <div className="flex space-x-3">
-          <CTAButton variant="secondary" className="flex-1">
-            Learn How
-          </CTAButton>
-          <CTAButton className="flex-1">Get Started</CTAButton>
-        </div>
-      </section>
-      {/* Featured Tutorials */}
-      <section>
-        <div className="flex justify-between items-center mb-4">
-          <h2 className="text-xl font-bold">Popular Repairs</h2>
-          <button className="text-emerald-600 flex items-center text-sm font-medium">
-            See all <ArrowRightIcon size={16} className="ml-1" />
+      {/* Barre de recherche */}
+      <div className="flex items-center border border-gray-300 rounded-full px-4 py-2 bg-white">
+        <SearchIcon className="text-gray-500 mr-2" />
+        <input type="text" placeholder="Rechercher" className="flex-1 bg-transparent text-sm outline-none placeholder:text-gray-400" />
+      </div>
+
+      {/* Mini menu de filtres */}
+      <div className="flex space-x-3 overflow-x-auto no-scrollbar text-sm font-medium text-gray-600">
+        {["Voir tout", "Textile", "Chaussure", "Accessoires", "Débutant", "Avancé"].map((cat) => (
+          <div key={cat} className="px-4 py-1 bg-secondary text-gray-700 rounded-full whitespace-nowrap cursor-pointer hover:bg-quaternary">
+            {cat}
+          </div>
+        ))}
+      </div>
+
+      {/* Recommandé pour toi */}
+      <section className="space-y-3">
+        <div className="flex justify-between items-center">
+          <h2 className="text-lg font-semibold">Recommandé pour toi</h2>
+          <button className="text-primary text-sm font-medium flex items-center">
+            Voir tout <ArrowRightIcon size={16} className="ml-1" />
           </button>
         </div>
-        <div className="grid grid-cols-1 gap-4">
-          <FeaturedCard
-            title="Fix Ripped Jeans Like a Pro"
-            description="Learn the visible mending technique to turn tears into style statements."
-            image="https://images.unsplash.com/photo-1625479144604-ae69462778b7?q=80&w=3088&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            tag="Beginner"
-          />
-          <FeaturedCard
-            title="Sneaker Restoration Guide"
-            description="Bring your favorite kicks back to life with these simple techniques."
-            image="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-            tag="Intermediate"
-          />
+        <div className="flex space-x-4 overflow-x-auto no-scrollbar">
+          {["WNAr_dHrG1M", "nCnPGMaYFio", "DhNIHpBb6Dw"].map((videoId) => (
+            <div key={videoId} className="w-[260px] flex-shrink-0">
+              <YouTube
+                videoId={videoId}
+                opts={{
+                  width: "260",
+                  height: "146",
+                  playerVars: {
+                    rel: 0,
+                    modestbranding: 1,
+                  },
+                }}
+              />
+            </div>
+          ))}
+        </div>
+        <div className="flex justify-end pr-2">
+          <ChevronRightIcon className="text-gray-400" />
         </div>
       </section>
-      {/* Why Repair Section */}
-      <section className="bg-gray-100 rounded-xl p-5">
-        <h2 className="text-xl font-bold mb-4">Why Repair?</h2>
-        <div className="space-y-4">
-          <div className="flex items-start">
-            <div className="bg-emerald-100 p-2 rounded-full mr-3">
-              <LeafIcon size={20} className="text-emerald-600" />
-            </div>
-            <div>
-              <h3 className="font-medium">Sustainability</h3>
-              <p className="text-sm text-gray-600">Extend the life of your clothes and reduce waste.</p>
-            </div>
-          </div>
-          <div className="flex items-start">
-            <div className="bg-emerald-100 p-2 rounded-full mr-3">
-              <TrendingUpIcon size={20} className="text-emerald-600" />
-            </div>
-            <div>
-              <h3 className="font-medium">Learn New Skills</h3>
-              <p className="text-sm text-gray-600">Master techniques that save money and express creativity.</p>
-            </div>
-          </div>
-          <div className="flex items-start">
-            <div className="bg-emerald-100 p-2 rounded-full mr-3">
-              <BriefcaseIcon size={20} className="text-emerald-600" />
-            </div>
-            <div>
-              <h3 className="font-medium">Career Opportunities</h3>
-              <p className="text-sm text-gray-600">Discover fulfilling career paths in textile and shoe repair.</p>
-            </div>
-          </div>
+
+      {/* Tes dernières réparations */}
+      <section className="space-y-3">
+        <div className="flex justify-between items-center">
+          <h2 className="text-lg font-semibold">Tes dernières réparations</h2>
+          <button className="text-primary text-sm font-medium flex items-center">
+            Voir tout <ArrowRightIcon size={16} className="ml-1" />
+          </button>
         </div>
-      </section>
-      {/* Career Spotlight */}
-      <section>
-        <h2 className="text-xl font-bold mb-4">Career Spotlight</h2>
-        <div className="bg-white rounded-xl overflow-hidden shadow border border-gray-100">
-          <img
-            src="https://images.unsplash.com/photo-1556906781-9a412961c28c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-            alt="Textile designer at work"
-            className="w-full h-48 object-cover"
-          />
-          <div className="p-4">
-            <h3 className="font-bold text-lg">Textile Repair Specialist</h3>
-            <p className="text-gray-600 text-sm mb-3">Combine technical skills and creativity to restore and reimagine garments.</p>
-            <CTAButton variant="secondary" className="w-full text-sm py-2">
-              Explore This Career
-            </CTAButton>
-          </div>
+        <div className="flex space-x-4 overflow-x-auto no-scrollbar">
+          {[
+            {
+              title: "Fermeture éclair remplacée",
+              image:
+                "https://images.unsplash.com/photo-1596832772762-78e213deff5f?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+              tag: "Textile",
+            },
+            {
+              title: "Semelle recollée",
+              image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=600&q=80",
+              tag: "Chaussure",
+            },
+            {
+              title: "Broderie créative",
+              image:
+                "https://images.unsplash.com/photo-1622378158084-f2221260e688?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dhttps://unsplash.com/photos/round-white-and-brown-floral-ceramic-plate-r4oGH_91jrU",
+              tag: "Custom",
+            },
+          ].map((repair, i) => (
+            <div key={i} className="w-[200px] flex-shrink-0 bg-white rounded-xl overflow-hidden shadow border border-gray-100">
+              <img src={repair.image} alt={repair.title} className="w-full h-32 object-cover" />
+              <div className="p-3">
+                <h3 className="text-sm font-medium">{repair.title}</h3>
+                <span className="text-xs text-white bg-quaternary px-2 py-0.5 rounded-full inline-block mt-2">{repair.tag}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="flex justify-end pr-2">
+          <ChevronRightIcon className="text-gray-400" />
         </div>
       </section>
     </div>
