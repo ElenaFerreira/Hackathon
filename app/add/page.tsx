@@ -1,43 +1,22 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 
 export default function AddPage() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
   const [photo, setPhoto] = useState<string | null>(null);
   const [step, setStep] = useState(1);
   const [form, setForm] = useState({ type: "", matiere: "", reparation: "" });
-  const [facingMode, setFacingMode] = useState<"user" | "environment">("environment");
 
-  const getCamera = async (mode: "user" | "environment") => {
-    try {
-      const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: mode } });
-      if (videoRef.current) {
-        videoRef.current.srcObject = stream;
-      }
-    } catch (err) {
-      console.error("Camera access error:", err);
+  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setPhoto(reader.result as string);
+        setStep(2);
+      };
+      reader.readAsDataURL(file);
     }
-  };
-
-  useEffect(() => {
-    getCamera(facingMode);
-  }, [facingMode]);
-
-  const switchCamera = () => {
-    setFacingMode((prev) => (prev === "user" ? "environment" : "user"));
-  };
-
-  const takePhoto = () => {
-    if (!videoRef.current || !canvasRef.current) return;
-    const context = canvasRef.current.getContext("2d");
-    if (!context) return;
-
-    context.drawImage(videoRef.current, 0, 0, 320, 240);
-    const dataURL = canvasRef.current.toDataURL("image/png");
-    setPhoto(dataURL);
-    setStep(2);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -53,13 +32,16 @@ export default function AddPage() {
         <span className={step === 3 ? "text-black font-semibold underline" : ""}>Étape 3</span>
       </div>
 
-      {/* Vidéo ou photo capturée */}
+      {/* Upload image */}
       {step === 1 && (
-        <div className="relative rounded-xl overflow-hidden border border-gray-200 aspect-[4/3] sm:aspect-video">
-          <video ref={videoRef} autoPlay playsInline className="absolute top-0 left-0 w-full h-full object-cover" />
-          <button onClick={switchCamera} className="absolute top-2 right-2 bg-white text-black text-xs px-3 py-1 rounded-full shadow">
-            🔄 Caméra
-          </button>
+        <div className="flex flex-col items-center space-y-4">
+          <label
+            htmlFor="fileInput"
+            className="cursor-pointer w-full aspect-[4/3] bg-gray-100 border border-dashed border-gray-400 rounded-xl flex items-center justify-center text-sm text-gray-500"
+          >
+            📷 Appuyer pour prendre une photo
+          </label>
+          <input id="fileInput" type="file" accept="image/*" capture="environment" onChange={handleImageUpload} className="hidden" />
         </div>
       )}
 
@@ -98,17 +80,6 @@ export default function AddPage() {
           </div>
         </div>
       )}
-
-      {/* Bouton capture */}
-      {step === 1 && (
-        <div className="flex justify-center">
-          <button onClick={takePhoto} className="w-16 h-16 bg-primary text-white rounded-full shadow-lg flex items-center justify-center">
-            📸
-          </button>
-        </div>
-      )}
-
-      <canvas ref={canvasRef} width="320" height="240" className="hidden" />
     </div>
   );
 }
