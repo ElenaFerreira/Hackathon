@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
 export default function AddPage() {
   const [photo, setPhoto] = useState<string | null>(null);
@@ -19,7 +19,7 @@ export default function AddPage() {
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
@@ -50,22 +50,39 @@ export default function AddPage() {
         <div className="space-y-4">
           <img src={photo} alt="Aperçu de la photo" className="w-full rounded-xl object-cover" style={{ aspectRatio: "4 / 3" }} />
           <div className="space-y-3">
-            <input
-              type="text"
+            <select
               name="type"
-              placeholder="Type"
               value={form.type}
               onChange={handleChange}
-              className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm"
-            />
-            <input
-              type="text"
+              className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm bg-white"
+            >
+              <option value="">Type</option>
+              <option value="tshirt">T-shirt</option>
+              <option value="pantalon">Pantalon</option>
+              <option value="chaussure">Chaussure</option>
+              <option value="veste">Veste</option>
+              <option value="sac">Sac</option>
+              <option value="ceinture">Ceinture</option>
+              <option value="chapeau">Chapeau</option>
+              <option value="autre">Autre</option>
+            </select>
+            <select
               name="matiere"
-              placeholder="Matière"
               value={form.matiere}
               onChange={handleChange}
-              className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm"
-            />
+              className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm bg-white"
+            >
+              <option value="">Matière</option>
+              <option value="coton">Coton</option>
+              <option value="jean">Jean</option>
+              <option value="cuir">Cuir</option>
+              <option value="laine">Laine</option>
+              <option value="polyester">Polyester</option>
+              <option value="nylon">Nylon</option>
+              <option value="synthétique">Synthétique</option>
+              <option value="toile">Toile</option>
+              <option value="autre">Autre</option>
+            </select>
             <input
               type="text"
               name="reparation"
