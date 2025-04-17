@@ -8,20 +8,26 @@ export default function AddPage() {
   const [photo, setPhoto] = useState<string | null>(null);
   const [step, setStep] = useState(1);
   const [form, setForm] = useState({ type: "", matiere: "", reparation: "" });
+  const [facingMode, setFacingMode] = useState<"user" | "environment">("environment");
+
+  const getCamera = async (mode: "user" | "environment") => {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: mode } });
+      if (videoRef.current) {
+        videoRef.current.srcObject = stream;
+      }
+    } catch (err) {
+      console.error("Camera access error:", err);
+    }
+  };
 
   useEffect(() => {
-    const getCamera = async () => {
-      try {
-        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-        if (videoRef.current) {
-          videoRef.current.srcObject = stream;
-        }
-      } catch (err) {
-        console.error("Camera access error:", err);
-      }
-    };
-    getCamera();
-  }, []);
+    getCamera(facingMode);
+  }, [facingMode]);
+
+  const switchCamera = () => {
+    setFacingMode((prev) => (prev === "user" ? "environment" : "user"));
+  };
 
   const takePhoto = () => {
     if (!videoRef.current || !canvasRef.current) return;
@@ -49,15 +55,18 @@ export default function AddPage() {
 
       {/* Vidéo ou photo capturée */}
       {step === 1 && (
-        <div className="rounded-xl overflow-hidden border border-gray-200">
-          <video ref={videoRef} autoPlay playsInline className="w-full object-cover aspect-video sm:aspect-[4/3]" />
+        <div className="relative rounded-xl overflow-hidden border border-gray-200 aspect-[4/3] sm:aspect-video">
+          <video ref={videoRef} autoPlay playsInline className="absolute top-0 left-0 w-full h-full object-cover" />
+          <button onClick={switchCamera} className="absolute top-2 right-2 bg-white text-black text-xs px-3 py-1 rounded-full shadow">
+            🔄 Caméra
+          </button>
         </div>
       )}
 
       {/* Aperçu photo + mini formulaire */}
       {step === 2 && photo && (
         <div className="space-y-4">
-          <img src={photo} alt="Aperçu de la photo" className="w-full rounded-xl aspect-video object-cover sm:aspect-[4/3]" />
+          <img src={photo} alt="Aperçu de la photo" className="w-full rounded-xl object-cover" style={{ aspectRatio: "4 / 3" }} />
           <div className="space-y-3">
             <input
               type="text"
