@@ -39,7 +39,7 @@ export default function AddPage() {
   };
 
   return (
-    <div className="max-w-md mx-auto px-4 py-6 space-y-6 h-screen">
+    <div className="max-w-md mx-auto px-4 py-6 space-y-6">
       {/* Étapes */}
       <div className="flex justify-between text-sm font-medium text-gray-400">
         <span className={step === 1 ? "text-black font-semibold underline" : ""}>Étape 1</span>
@@ -50,14 +50,14 @@ export default function AddPage() {
       {/* Vidéo ou photo capturée */}
       {step === 1 && (
         <div className="rounded-xl overflow-hidden border border-gray-200">
-          <video ref={videoRef} autoPlay playsInline className="w-full object-cover" />
+          <video ref={videoRef} autoPlay playsInline className="w-full aspect-video object-cover" />
         </div>
       )}
 
       {/* Aperçu photo + mini formulaire */}
       {step === 2 && photo && (
         <div className="space-y-4">
-          <img src={photo} alt="Aperçu de la photo" className="w-full rounded-xl" />
+          <img src={photo} alt="Aperçu de la photo" className="w-full rounded-xl aspect-video object-cover" />
           <div className="space-y-3">
             <input
               type="text"
