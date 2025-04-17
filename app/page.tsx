@@ -92,6 +92,36 @@ export default function Home() {
           <ChevronRightIcon className="text-gray-400" />
         </div>
       </section>
+
+      {/* Top tuto */}
+      <section className="space-y-3">
+        <div className="flex justify-between items-center">
+          <h2 className="text-lg font-semibold">Top tuto</h2>
+          <button className="text-primary text-sm font-medium flex items-center">
+            Voir tout <ArrowRightIcon size={16} className="ml-1" />
+          </button>
+        </div>
+        <div className="flex space-x-4 overflow-x-auto no-scrollbar">
+          {["WNAr_dHrG1M", "nCnPGMaYFio", "DhNIHpBb6Dw"].map((videoId) => (
+            <div key={videoId} className="w-[260px] flex-shrink-0">
+              <YouTube
+                videoId={videoId}
+                opts={{
+                  width: "260",
+                  height: "146",
+                  playerVars: {
+                    rel: 0,
+                    modestbranding: 1,
+                  },
+                }}
+              />
+            </div>
+          ))}
+        </div>
+        <div className="flex justify-end pr-2">
+          <ChevronRightIcon className="text-gray-400" />
+        </div>
+      </section>
     </div>
   );
 }
