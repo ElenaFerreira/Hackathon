@@ -50,14 +50,14 @@ export default function AddPage() {
       {/* Vidéo ou photo capturée */}
       {step === 1 && (
         <div className="rounded-xl overflow-hidden border border-gray-200">
-          <video ref={videoRef} autoPlay playsInline className="w-full aspect-video object-cover" />
+          <video ref={videoRef} autoPlay playsInline className="w-full object-cover aspect-video sm:aspect-[4/3]" />
         </div>
       )}
 
       {/* Aperçu photo + mini formulaire */}
       {step === 2 && photo && (
         <div className="space-y-4">
-          <img src={photo} alt="Aperçu de la photo" className="w-full rounded-xl aspect-video object-cover" />
+          <img src={photo} alt="Aperçu de la photo" className="w-full rounded-xl aspect-video object-cover sm:aspect-[4/3]" />
           <div className="space-y-3">
             <input
               type="text"
