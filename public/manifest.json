@@ -1,12 +1,10 @@
 {
   "name": "Refashion Repair",
-  "short_name": "Refashion",
-  "description": "Repair your clothes and discover cool repair careers",
+  "short_name": "Re_pair",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#10b981",
-  "orientation": "portrait",
   "icons": [
     {
       "src": "/icons/icon-192x192.png",
