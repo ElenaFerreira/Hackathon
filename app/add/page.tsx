@@ -163,7 +163,7 @@ export default function AddPage() {
           <div className="space-y-3">
             <h2 className="font-semibold text-sm">Tu auras besoin de ?</h2>
             <div className="grid grid-cols-2 gap-2">
-              {["Fil épais", "Machine à coudre", "Patch thermocollant"].map((tool) => (
+              {["Fil épais", "Machine à coudre", "Patch thermocollant", "Ciseaux de couture"].map((tool) => (
                 <button
                   key={tool}
                   onClick={() => toggleTool(tool)}

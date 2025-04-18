@@ -14,12 +14,12 @@ export default function Home() {
 
         {/* Bouton filtre */}
         <button className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-          <Settings2 className="text-black w-5 h-5" />{" "}
+          <Settings2 className="text-black w-5 h-5" />
         </button>
       </div>
 
       {/* Mini menu de filtres */}
-      <div className="flex space-x-3 overflow-x-auto no-scrollbar text-sm font-medium text-gray-600">
+      <div className="flex space-x-3 overflow-x-auto no-scrollbar text-sm font-medium text-gray-600 pb-1">
         {["Voir tout", "Textile", "Chaussure", "Accessoires", "Débutant", "Avancé"].map((cat) => (
           <div key={cat} className="px-4 py-1 bg-secondary text-gray-700 rounded-full whitespace-nowrap cursor-pointer hover:bg-quaternary">
             {cat}
@@ -35,7 +35,7 @@ export default function Home() {
             Voir tout <ArrowRightIcon size={16} className="ml-1" />
           </button>
         </div>
-        <div className="flex space-x-4 overflow-x-auto no-scrollbar">
+        <div className="flex space-x-4 overflow-x-auto no-scrollbar pb-1">
           {["WNAr_dHrG1M", "nCnPGMaYFio", "DhNIHpBb6Dw"].map((videoId) => (
             <div key={videoId} className="w-[260px] flex-shrink-0">
               <YouTube
@@ -62,7 +62,7 @@ export default function Home() {
             Voir tout <ArrowRightIcon size={16} className="ml-1" />
           </button>
         </div>
-        <div className="flex space-x-4 overflow-x-auto no-scrollbar pb-3">
+        <div className="flex space-x-4 overflow-x-auto no-scrollbar pb-1">
           {[
             {
               title: "Fermeture éclair remplacée",
@@ -101,7 +101,7 @@ export default function Home() {
             Voir tout <ArrowRightIcon size={16} className="ml-1" />
           </button>
         </div>
-        <div className="flex space-x-4 overflow-x-auto no-scrollbar">
+        <div className="flex space-x-4 overflow-x-auto no-scrollbar pb-1">
           {["WNAr_dHrG1M", "nCnPGMaYFio", "DhNIHpBb6Dw"].map((videoId) => (
             <div key={videoId} className="w-[260px] flex-shrink-0">
               <YouTube
