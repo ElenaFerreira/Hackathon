@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
   { href: "/tutorials", icon: PlayIcon, label: "Tutoriels" },
-  { href: "/add", icon: Camera, label: "Scanner" },
+  { href: "/add/step1", icon: Camera, label: "Scanner" },
   { href: "/profile", icon: UserIcon, label: "Profil" },
 ];
 
