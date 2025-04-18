@@ -87,7 +87,7 @@ export default function Step2Page() {
                 name={field.name}
                 value={field.value}
                 onChange={field.onChange}
-                className="w-full pl-14 pr-8 py-3 border border-gray-300 rounded-md text-sm bg-white appearance-none"
+                className="w-full pl-14 pr-8 py-3 border border-gray-300 rounded-md text-sm bg-white appearance-none cursor-pointer"
               >
                 <option value="">{field.placeholder}</option>
                 {field.options.map((opt) => (
@@ -98,7 +98,7 @@ export default function Step2Page() {
               </select>
             </div>
           ))}
-          <button onClick={handleNext} className="bg-primary text-white px-6 py-2 rounded-full font-medium text-sm mx-auto block">
+          <button onClick={handleNext} className="bg-primary text-white px-6 py-2 rounded-full font-medium text-sm mx-auto block cursor-pointer">
             Suivant
           </button>
         </div>

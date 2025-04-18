@@ -54,7 +54,7 @@ export default function Step3Page() {
                 key={label}
                 type="button"
                 onClick={() => toggleTag(label)}
-                className={`flex items-center px-3 py-2 border rounded-xl text-sm space-x-2 ${
+                className={`flex items-center px-3 py-2 border rounded-xl text-sm space-x-2 cursor-pointer ${
                   selectedTags.includes(label) ? "bg-primary text-white border-primary" : "border-primary text-black"
                 }`}
               >
@@ -65,7 +65,7 @@ export default function Step3Page() {
             <button
               type="button"
               onClick={() => toggleTag("Trou dans la poche droite")}
-              className={`flex items-center px-3 py-2 border rounded-xl text-sm space-x-2 col-span-2 ${
+              className={`flex items-center px-3 py-2 border rounded-xl text-sm space-x-2 col-span-2 cursor-pointer ${
                 selectedTags.includes("Trou dans la poche droite") ? "bg-primary text-white border-primary" : "border-primary text-black"
               }`}
             >
@@ -82,7 +82,7 @@ export default function Step3Page() {
               <button
                 key={tool}
                 onClick={() => toggleTool(tool)}
-                className={`px-3 py-2 rounded-xl text-sm border ${
+                className={`px-3 py-2 rounded-xl text-sm border cursor-pointer ${
                   tools.includes(tool) ? "bg-primary text-white border-primary" : "border-blue-200 bg-transparent text-black"
                 }`}
               >
@@ -115,7 +115,7 @@ export default function Step3Page() {
             ))}
           </div>
           <div className="flex justify-center">
-            <button onClick={handleFinish} className="bg-primary text-white px-6 py-2 rounded-full font-medium text-sm">
+            <button onClick={handleFinish} className="bg-primary text-white px-6 py-2 rounded-full font-medium text-sm cursor-pointer">
               Terminer
             </button>
           </div>

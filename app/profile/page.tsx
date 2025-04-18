@@ -105,7 +105,7 @@ export default function ProfilePage() {
           ))}
         </div>
         <div className="flex justify-center">
-          <button className="bg-primary text-white px-6 py-2 rounded-full font-medium text-sm">Créer un tutoriel</button>
+          <button className="bg-primary text-white px-6 py-2 rounded-full font-medium text-sm cursor-pointer">Créer un tutoriel</button>
         </div>
       </div>
     </div>
