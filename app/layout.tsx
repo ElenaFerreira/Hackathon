@@ -5,7 +5,7 @@ import { Navigation } from "@/components/Navigation";
 
 export const metadata: Metadata = {
   title: "Re_pair",
-  description: "Join the movement to repair your clothes and shoes",
+  description: "Donner aux 15-25 ans le pouvoir d’agir par l’auto-réparation – un geste simple, durable et partagé.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
