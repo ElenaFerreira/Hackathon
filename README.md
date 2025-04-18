@@ -1,4 +1,4 @@
-# Re_pair
+<img src="Logo.svg" alt="Re_pair logo" width="120" />
 
 Bienvenue dans **Re_pair**, une application web mobile-first permettant de scanner un article textile ou chaussure, d'enregistrer ses détails de réparation, et de recevoir des tutoriels personnalisés.
 
