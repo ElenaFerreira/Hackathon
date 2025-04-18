@@ -1,5 +1,5 @@
 "use client";
-import { SearchIcon, ArrowRightIcon, ChevronRightIcon, Settings2 } from "lucide-react";
+import { SearchIcon, ArrowRightIcon, Settings2 } from "lucide-react";
 import YouTube from "react-youtube";
 
 export default function Home() {
