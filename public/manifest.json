@@ -1,10 +1,10 @@
 {
-  "name": "Refashion Repair",
+  "name": "Re_pair",
   "short_name": "Re_pair",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#10b981",
+  "theme_color": "#faf4f2",
   "icons": [
     {
       "src": "/images/favicon/favicon-96x96.png",
