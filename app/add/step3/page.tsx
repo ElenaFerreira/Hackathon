@@ -1,7 +1,7 @@
 // app/add/step3/page.tsx
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { CheckCircleIcon, ShirtIcon, HammerIcon } from "lucide-react";
