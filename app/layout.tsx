@@ -19,11 +19,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="shortcut icon" href="/images/favicon/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png" />
         <meta name="apple-mobile-web-app-title" content="Re_pair" />
-        {/* <link rel="manifest" href="/images/favicon/site.webmanifest" /> */}
       </head>
       <body className="bg-gray-50 flex flex-col min-h-screen">
         <Header />
-        <main className="flex-1 pb-20">{children}</main>
+        <main className="flex-1 pb-20 max-w-md mx-auto w-full bg-cream">{children}</main>
         <Navigation />
       </body>
     </html>

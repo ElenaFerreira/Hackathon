@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { CheckCircleIcon, ShirtIcon, HammerIcon, TagIcon, ChevronDownIcon } from "lucide-react";
+import Link from "next/link";
 
 export default function AddPage() {
   const [photo, setPhoto] = useState<string | null>(null);
@@ -199,9 +200,20 @@ export default function AddPage() {
               ))}
             </div>
             <div className="flex justify-center">
-              <button className="bg-primary text-white px-6 py-2 rounded-full font-medium text-sm">Terminer</button>
+              <button onClick={() => setStep(4)} className="bg-primary text-white px-6 py-2 rounded-full font-medium text-sm">
+                Terminer
+              </button>
             </div>
           </div>
+        </div>
+      )}
+
+      {step === 4 && (
+        <div className="text-center space-y-4">
+          <p className="text-lg font-semibold text-green-600">Ton scan est bien enregistré ✅</p>
+          <Link href="/" className="text-primary underline text-sm">
+            Revenir à l’accueil
+          </Link>
         </div>
       )}
     </div>
