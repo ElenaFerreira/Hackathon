@@ -24,6 +24,37 @@
   --cream: #faf4f2;
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins.otf") format("otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("/fonts/Lato.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body,
+div {
+  font-family: "Poppins", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  font-size: 24px;
+}
+h2 {
+  font-size: 18px;
 }

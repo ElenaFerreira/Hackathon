@@ -58,7 +58,7 @@ export default function Home() {
             Voir tout <ArrowRightIcon size={16} className="ml-1" />
           </button>
         </div>
-        <div className="flex space-x-4 overflow-x-auto no-scrollbar">
+        <div className="flex space-x-4 overflow-x-auto no-scrollbar pb-3">
           {[
             {
               title: "Fermeture éclair remplacée",
