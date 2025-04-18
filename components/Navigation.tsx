@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { HomeIcon, SearchIcon, Camera, PlayIcon, UserIcon } from "lucide-react";
+import { Camera, PlayIcon, UserIcon } from "lucide-react";
 
 const navItems = [
   { href: "/tutorials", icon: PlayIcon, label: "Tutoriels" },

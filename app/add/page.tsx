@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 
 export default function AddPage() {
   const [photo, setPhoto] = useState<string | null>(null);
