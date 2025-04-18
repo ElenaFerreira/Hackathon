@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Re_pair
 
-## Getting Started
+Bienvenue dans **Re_pair**, une application web mobile-first permettant de scanner un article textile ou chaussure, d'enregistrer ses détails de réparation, et de recevoir des tutoriels personnalisés.
 
-First, run the development server:
+Conçu pour encourager la réparation plutôt que le jetable, Re_pair est un outil destiné à sensibiliser les 15-25 ans à des gestes simples, à des savoir-faire durables, et aux métiers liés à la réparation textile.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+> ✨ Ce projet a été réalisé en **24h** lors d'un **hackathon à Digital Campus** sur la thématique de la réparation textile, en partenariat avec **Refashion**.
+
+## 🌐 Stack technique
+
+| Outil         | Version  | Description                     |
+| ------------- | -------- | ------------------------------- |
+| Next.js       | 15.3.0   | Framework React pour le SSR/SSG |
+| React         | ^19.1.0  | Librairie UI principale         |
+| TypeScript    | ^5       | Superset de JavaScript          |
+| TailwindCSS   | ^4       | Utilitaire de style CSS         |
+| Lucide React  | ^0.488.0 | Icônes SVG modernes             |
+| Framer Motion | ^12.7.4  | Animations fluides pour React   |
+| next-pwa      | ^5.6.0   | Ajout du support PWA            |
+| react-youtube | ^10.1.0  | Intégration des vidéos YouTube  |
+| ESLint        | ^9       | Linting pour JS/TS              |
+| PostCSS       | ^8       | Tailwind postcss plugin         |
+| Vercel        | -        | Déploiement en continu          |
+
+## 🚀 Fonctionnalités
+
+- Scan via l’appareil photo (mode PWA ou fichier sur desktop)
+- Formulaires interactifs en 3 étapes
+- Tutoriels vidéos adaptés
+- Historique des réparations
+- Ajout possible à l'écran d'accueil (PWA)
+- Sauvegarde des données via `sessionStorage`
+
+## 📂 Structure du projet
+
+```
+/app
+  /add        -> Parcours en 3 étapes : scan, infos, réparation
+  /profile    -> Page profil avec historique
+  /tutorials  -> Page de recherche de tutoriels
+  /community  -> Communauté (placeholder)
+  /components -> Composants réutilisables
+  /public     -> Assets (icônes, manifest, images, etc)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎨 Design
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Couleurs personnalisées via Tailwind config :
+  ```css
+  --primary: #ff6235;
+  --secondary: #d2edff;
+  --tertiary: #ffc3c3;
+  --quaternary: #2bb673;
+  --quinary: #fef232;
+  --cream: #faf4f2;
+  ```
+- Mobile-first (responsive, PWA-friendly)
+- Icônes : Lucide React
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ⏻ Lancer le projet (développement)
 
-## Learn More
+```bash
+# Installer les dépendances
+npm install
 
-To learn more about Next.js, take a look at the following resources:
+# Lancer en mode développement
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+> Le mode développement **n’active pas** le mode PWA (service worker désactivé).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## ⭕ Lancer en mode production avec la PWA
 
-## Deploy on Vercel
+```bash
+# Générer les fichiers de build
+npm run build
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Lancer le serveur local avec service worker + manifest
+npm start
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🙏 Crédit
+
+Projet créé par **Elena FERREIRA**
+
+- Hackathon 24h @ Digital Campus
+- Avril 2025
+
+Merci à **Refashion** pour ce challenge !
+
+## ⚠️ Disclaimer
+
+Ce projet est un **prototype POC** créé dans le cadre d’un hackathon et peut contenir du code simplifié ou non exhaustif. Pour un déploiement réel, des optimisations de performance, sécurité et accessibilité sont à prévoir.
