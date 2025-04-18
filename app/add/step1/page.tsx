@@ -10,8 +10,9 @@ export default function Step1Page() {
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
-      const blobUrl = URL.createObjectURL(file);
-      sessionStorage.setItem("scan-photo-url", blobUrl); // ✅ très léger
+      const url = URL.createObjectURL(file);
+      sessionStorage.setItem("scan-photo-url", url);
+      sessionStorage.removeItem("add_form");
       router.push("/add/step2");
     }
   };

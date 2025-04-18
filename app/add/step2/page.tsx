@@ -31,10 +31,6 @@ export default function Step2Page() {
     router.push("/add/step3");
   };
 
-  useEffect(() => {
-    sessionStorage.removeItem("add_form");
-  }, []);
-
   return (
     <div className="bg-cream max-w-md mx-auto px-4 py-6 space-y-6">
       {/* Étapes sous forme d'icônes */}
