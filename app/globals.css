@@ -26,7 +26,8 @@
 
 @font-face {
   font-family: "Poppins";
-  src: url("/fonts/Poppins.otf") format("otf");
+  src: url("/fonts/Poppins.ttf") format("ttf");
+  src: url("/fonts/Poppins.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -34,6 +35,7 @@
 @font-face {
   font-family: "Lato";
   src: url("/fonts/Lato.ttf") format("ttf");
+  src: url("/fonts/Lato.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
