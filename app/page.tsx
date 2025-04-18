@@ -8,7 +8,7 @@ export default function Home() {
       <div className="flex items-center space-x-3">
         {/* Barre de recherche */}
         <div className="flex items-center rounded-full px-4 py-3 bg-white flex-1">
-          <input type="text" placeholder="Rechercher" className="flex-1 bg-transparent text-sm outline-none placeholder:text-black pl-1" />
+          <input type="text" placeholder="Rechercher" className="flex-1 bg-transparent text-base outline-none placeholder:text-black pl-1" />
           <SearchIcon className="text-black w-5 h-5" />
         </div>
 
