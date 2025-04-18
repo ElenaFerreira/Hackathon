@@ -4,7 +4,7 @@ import YouTube from "react-youtube";
 
 export default function Home() {
   return (
-    <div className="px-4 py-6 space-y-8 max-w-md mx-auto w-full">
+    <div className="bg-cream px-4 py-6 space-y-8 max-w-md mx-auto w-full">
       {/* Barre de recherche */}
       <div className="flex items-center border border-gray-300 rounded-full px-4 py-2 bg-white">
         <SearchIcon className="text-gray-500 mr-2" />

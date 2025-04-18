@@ -1,51 +1,106 @@
 "use client";
-
-import React from "react";
-import { Edit2Icon, HeartIcon, ScanIcon, ShirtIcon, PlayIcon } from "lucide-react";
 import Image from "next/image";
+import { PencilIcon, ScanIcon, LeafIcon, CoinsIcon, HammerIcon } from "lucide-react";
 
 export default function ProfilePage() {
   return (
-    <div className="bg-cream min-h-screen px-4 py-6 max-w-md mx-auto w-full space-y-6">
-      <h1 className="text-xl font-bold text-center">Profil</h1>
-
-      {/* Avatar + nom */}
-      <div className="flex flex-col items-center space-y-2">
-        <div className="relative">
-          <div className="overflow-hidden size-30">
-            <Image src="https://randomuser.me/api/portraits/men/32.jpg" alt="Avatar" fill className="object-cover rounded-full" />
+    <div className="bg-cream min-h-screen px-4 py-6 max-w-md mx-auto w-full space-y-4">
+      {/* Avatar */}
+      <div className="flex justify-center">
+        <div className="relative w-28 h-28">
+          <div className="w-28 h-28 rounded-full overflow-hidden relative">
+            <Image src="https://randomuser.me/api/portraits/men/32.jpg" alt="Avatar" fill className="object-cover rounded-full" />{" "}
           </div>
-          <div className="absolute top-1 right-1 bg-white rounded-full p-1 shadow">
-            <Edit2Icon className="size-5 text-gray-700" />
+          <div className="absolute bottom-1 right-1 bg-primary text-white p-1 rounded-full shadow-md">
+            <PencilIcon className="w-4 h-4" />
           </div>
         </div>
-        <div className="text-center">
-          <h3 className="font-bold text-lg">Luc Maury</h3>
-          <p className="text-sm text-gray-600">Modifier le profil</p>
+      </div>
+      <div className="text-center">
+        <h3 className="font-bold text-lg">Noé Dumas</h3>
+      </div>
+
+      {/* Mes réparations */}
+      <div className="space-y-3">
+        <h2 className="text-sm font-semibold">Historique de mes scans</h2>
+        <div className="flex space-x-4 overflow-x-auto no-scrollbar">
+          {[7, 12, 18, 21].map((days, i) => (
+            <div key={i} className="flex-shrink-0 w-32 rounded-2xl overflow-hidden bg-white shadow mb-1">
+              <Image
+                src={`/images/repair-${i + 1}.png`}
+                alt="Réparation"
+                width={128}
+                height={96}
+                className="w-full h-30 object-cover rounded-bl-2xl rounded-br-2xl"
+              />
+              <p className="text-xs text-center py-2 text-gray-600">il y a {days} jours</p>
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* Stat cards */}
-      <div className="grid grid-cols-2 gap-4">
-        <div className="bg-quinary text-black rounded-xl p-4 flex flex-col items-center justify-center">
-          <ScanIcon className="w-6 h-6 mb-1" />
-          <p className="text-lg font-bold">63</p>
-          <p className="text-sm">Scans</p>
+      {/* Statistiques */}
+      <div className="space-y-3">
+        <h2 className="text-sm font-semibold">Mes accomplissements </h2>
+        <div className="flex items-center space-x-3">
+          <div className="bg-white w-8 h-8 rounded-xl flex items-center justify-center shadow">
+            <ScanIcon className="w-4 h-4 text-black" />
+          </div>
+          <p className="text-sm">
+            <span className="text-primary font-semibold">63</span> scans effectués
+          </p>
         </div>
-        <div className="bg-quaternary text-white rounded-xl p-4 flex flex-col items-center justify-center">
-          <PlayIcon className="w-6 h-6 mb-1" />
-          <p className="text-lg font-bold">20</p>
-          <p className="text-sm">Tutos</p>
+        <div className="flex items-center space-x-3">
+          <div className="bg-white w-8 h-8 rounded-xl flex items-center justify-center shadow">
+            <HammerIcon className="w-4 h-4 text-black" />
+          </div>
+          <p className="text-sm">
+            <span className="text-primary font-semibold">20</span> articles réparés
+          </p>
         </div>
-        <div className="bg-secondary text-black rounded-xl p-4 flex flex-col items-center justify-center">
-          <HeartIcon className="w-6 h-6 mb-1" />
-          <p className="text-lg font-bold">8</p>
-          <p className="text-sm">Favoris</p>
+        <div className="flex items-center space-x-3">
+          <div className="bg-white w-8 h-8 rounded-xl flex items-center justify-center shadow">
+            <LeafIcon className="w-4 h-4 text-black" />
+          </div>
+          <p className="text-sm">
+            <span className="text-primary font-semibold">6,2kg</span> de CO2 évités
+          </p>
         </div>
-        <div className="bg-tertiary text-black rounded-xl p-4 flex flex-col items-center justify-center">
-          <ShirtIcon className="w-6 h-6 mb-1" />
-          <p className="text-lg font-bold">20</p>
-          <p className="text-sm">Réparations</p>
+        <div className="flex items-center space-x-3">
+          <div className="bg-white w-8 h-8 rounded-xl flex items-center justify-center shadow">
+            <CoinsIcon className="w-4 h-4 text-black" />
+          </div>
+          <p className="text-sm">
+            <span className="text-primary font-semibold">89€</span> économisés
+          </p>
+        </div>
+      </div>
+
+      {/* Tutos créés */}
+      <div className="space-y-3">
+        <h2 className="text-sm font-semibold">Mes tutos</h2>
+        <div className="flex space-x-4 overflow-x-auto no-scrollbar">
+          {[1, 2].map((tuto, i) => (
+            <div key={i} className="flex-shrink-0 w-56 bg-white rounded-2xl shadow">
+              <div className="relative">
+                <Image
+                  src={`/images/tuto-${i + 1}.jpg`}
+                  alt="Tuto"
+                  width={224}
+                  height={126}
+                  className="w-full h-28 object-cover rounded-xl border border-solid border-black"
+                />
+                <div className="absolute top-1 left-1 bg-white text-black text-xs px-2 py-0.5 rounded-full">06:32</div>
+              </div>
+              <div className="p-2">
+                <p className="text-sm font-medium leading-tight">Que faire de mes textiles et chaussures usagés ?</p>
+                <p className="text-xs text-gray-500">Noé Dumas</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="flex justify-center">
+          <button className="bg-primary text-white px-6 py-2 rounded-full font-medium text-sm">Créer un tutoriel</button>
         </div>
       </div>
     </div>

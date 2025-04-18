@@ -6,12 +6,8 @@ const withPWA = require("next-pwa")({
   skipWaiting: true,
 });
 
-module.exports = withPWA({
-  reactStrictMode: true,
-});
-
-/** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: true,
   images: {
     remotePatterns: [
       {
@@ -19,8 +15,13 @@ const nextConfig = {
         hostname: "randomuser.me",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "source.unsplash.com",
+        pathname: "/**",
+      },
     ],
   },
 };
 
-module.exports = nextConfig;
+module.exports = withPWA(nextConfig);

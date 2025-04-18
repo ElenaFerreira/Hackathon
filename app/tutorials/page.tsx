@@ -7,7 +7,7 @@ import { FeaturedCard } from "../../components/FeaturedCard";
 export default function Tutorials() {
   const categories = ["All", "Clothing", "Shoes", "Home Textiles", "Advanced"];
   return (
-    <div className="px-4 py-6 space-y-6 max-w-md mx-auto w-full">
+    <div className="bg-cream px-4 py-6 space-y-6 max-w-md mx-auto w-full">
       <h1 className="text-2xl font-bold">Repair Tutorials</h1>
       {/* Search bar */}
       <div className="relative">

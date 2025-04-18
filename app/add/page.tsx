@@ -24,7 +24,7 @@ export default function AddPage() {
   };
 
   return (
-    <div className="max-w-md mx-auto px-4 py-6 space-y-6">
+    <div className="bg-cream max-w-md mx-auto px-4 py-6 space-y-6">
       {/* Étapes */}
       <div className="flex justify-between text-sm font-medium text-gray-400">
         <span className={step === 1 ? "text-black font-semibold underline" : ""}>Étape 1</span>
