@@ -2,7 +2,7 @@
 "use client";
 
 import Link from "next/link";
-import { CheckCircleIcon, ShirtIcon, HammerIcon } from "lucide-react";
+import { CheckCircleIcon } from "lucide-react";
 
 export default function ConfirmationPage() {
   return (

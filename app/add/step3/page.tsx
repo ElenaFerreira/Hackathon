@@ -8,14 +8,8 @@ import { CheckCircleIcon, ShirtIcon, HammerIcon } from "lucide-react";
 
 export default function Step3Page() {
   const router = useRouter();
-  const [photo, setPhoto] = useState<string | null>(null);
   const [tools, setTools] = useState<string[]>([]);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
-
-  useEffect(() => {
-    const savedPhoto = sessionStorage.getItem("scan-photo-url");
-    if (savedPhoto) setPhoto(savedPhoto);
-  }, []);
 
   const toggleTool = (tool: string) => {
     setTools((prev) => (prev.includes(tool) ? prev.filter((t) => t !== tool) : [...prev, tool]));
