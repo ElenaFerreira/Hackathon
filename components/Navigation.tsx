@@ -1,11 +1,13 @@
 "use client";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Camera, PlayIcon, UserIcon } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
   { href: "/tutorials", icon: PlayIcon, label: "Tutoriels" },
-  { href: "/add", icon: Camera, label: "Ajouter" },
+  { href: "/add", icon: Camera, label: "Scanner" },
   { href: "/profile", icon: UserIcon, label: "Profil" },
 ];
 
@@ -19,9 +21,22 @@ export function Navigation() {
           const isActive = pathname === href;
           return (
             <Link key={href} href={href} className="flex flex-col items-center justify-between relative w-full">
-              <Icon className={`w-6 h-6 mb-1 ${isActive ? "text-primary" : "text-black"}`} />
-              <span className={`text-xs font-medium ${isActive ? "text-primary" : "text-black"}`}>{label}</span>
-              {isActive && <div className="absolute -bottom-5 w-8 h-4 bg-primary rounded-t-full" />}
+              <Icon className={`w-6 h-6 mb-1 transition-colors duration-300 ${isActive ? "text-primary" : "text-black"}`} />
+              <span className={`text-xs font-medium transition-colors duration-300 ${isActive ? "text-primary" : "text-black"}`}>{label}</span>
+
+              {/* Animation du demi-cercle */}
+              <AnimatePresence>
+                {isActive && (
+                  <motion.div
+                    layoutId="active-indicator"
+                    className="absolute -bottom-5 w-8 h-4 bg-primary rounded-t-full"
+                    initial={{ opacity: 0, y: 6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 6 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                )}
+              </AnimatePresence>
             </Link>
           );
         })}

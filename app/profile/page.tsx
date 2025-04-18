@@ -9,10 +9,10 @@ export default function ProfilePage() {
       <div className="flex justify-center">
         <div className="relative w-28 h-28">
           <div className="w-28 h-28 rounded-full overflow-hidden relative">
-            <Image src="https://randomuser.me/api/portraits/men/32.jpg" alt="Avatar" fill className="object-cover rounded-full" />{" "}
+            <Image src="/images/profile.png" alt="Avatar" fill className="object-cover rounded-full" />
           </div>
           <div className="absolute bottom-1 right-1 bg-primary text-white p-1 rounded-full shadow-md">
-            <PencilIcon className="w-4 h-4" />
+            <PencilIcon className="size-5" />
           </div>
         </div>
       </div>
@@ -27,11 +27,11 @@ export default function ProfilePage() {
           {[7, 12, 18, 21].map((days, i) => (
             <div key={i} className="flex-shrink-0 w-32 rounded-2xl overflow-hidden bg-white shadow mb-1">
               <Image
-                src={`/images/repair-${i + 1}.png`}
+                src={`/images/repair-${i + 1}.jpg`}
                 alt="Réparation"
                 width={128}
                 height={96}
-                className="w-full h-30 object-cover rounded-bl-2xl rounded-br-2xl"
+                className="w-full h-[180px] object-cover rounded-bl-2xl rounded-br-2xl"
               />
               <p className="text-xs text-center py-2 text-gray-600">il y a {days} jours</p>
             </div>
@@ -94,7 +94,12 @@ export default function ProfilePage() {
               </div>
               <div className="p-2">
                 <p className="text-sm font-medium leading-tight">Que faire de mes textiles et chaussures usagés ?</p>
-                <p className="text-xs text-gray-500">Noé Dumas</p>
+                <div className="flex items-center space-x-2 mt-1">
+                  <div className="relative w-5 h-5">
+                    <Image src="/images/profile.png" alt="Avatar" fill className="object-cover rounded-full" />
+                  </div>
+                  <p className="text-xs text-gray-500">Noé Dumas</p>
+                </div>
               </div>
             </div>
           ))}
