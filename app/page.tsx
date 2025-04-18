@@ -1,14 +1,21 @@
 "use client";
-import { SearchIcon, ArrowRightIcon, ChevronRightIcon } from "lucide-react";
+import { SearchIcon, ArrowRightIcon, ChevronRightIcon, Settings2 } from "lucide-react";
 import YouTube from "react-youtube";
 
 export default function Home() {
   return (
     <div className="bg-cream px-4 py-6 space-y-8 max-w-md mx-auto w-full">
-      {/* Barre de recherche */}
-      <div className="flex items-center border border-gray-300 rounded-full px-4 py-2 bg-white">
-        <SearchIcon className="text-gray-500 mr-2" />
-        <input type="text" placeholder="Rechercher" className="flex-1 bg-transparent text-sm outline-none placeholder:text-gray-400" />
+      <div className="flex items-center space-x-3">
+        {/* Barre de recherche */}
+        <div className="flex items-center rounded-full px-4 py-3 bg-white flex-1">
+          <input type="text" placeholder="Rechercher" className="flex-1 bg-transparent text-sm outline-none placeholder:text-black pl-1" />
+          <SearchIcon className="text-black w-5 h-5" />
+        </div>
+
+        {/* Bouton filtre */}
+        <button className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+          <Settings2 className="text-black w-5 h-5" />{" "}
+        </button>
       </div>
 
       {/* Mini menu de filtres */}
@@ -44,9 +51,6 @@ export default function Home() {
               />
             </div>
           ))}
-        </div>
-        <div className="flex justify-end pr-2">
-          <ChevronRightIcon className="text-gray-400" />
         </div>
       </section>
 
@@ -87,10 +91,6 @@ export default function Home() {
             </div>
           ))}
         </div>
-
-        <div className="flex justify-end pr-2">
-          <ChevronRightIcon className="text-gray-400" />
-        </div>
       </section>
 
       {/* Top tuto */}
@@ -117,9 +117,6 @@ export default function Home() {
               />
             </div>
           ))}
-        </div>
-        <div className="flex justify-end pr-2">
-          <ChevronRightIcon className="text-gray-400" />
         </div>
       </section>
     </div>

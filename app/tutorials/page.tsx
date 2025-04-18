@@ -1,65 +1,75 @@
 "use client";
-
-import React from "react";
-import { SearchIcon, FilterIcon } from "lucide-react";
-import { FeaturedCard } from "../../components/FeaturedCard";
+import { SearchIcon, Settings2 } from "lucide-react";
+import Image from "next/image";
 
 export default function Tutorials() {
-  const categories = ["All", "Clothing", "Shoes", "Home Textiles", "Advanced"];
   return (
-    <div className="bg-cream px-4 py-6 space-y-6 max-w-md mx-auto w-full">
-      <h1 className="text-2xl font-bold">Repair Tutorials</h1>
-      {/* Search bar */}
-      <div className="relative">
-        <SearchIcon size={18} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-        <input
-          type="text"
-          placeholder="Search tutorials..."
-          className="w-full bg-white border border-gray-200 rounded-full py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
-        />
-        <button className="absolute right-3 top-1/2 transform -translate-y-1/2">
-          <FilterIcon size={18} className="text-gray-500" />
+    <div className="bg-cream px-4 py-6 space-y-8 max-w-md mx-auto w-full">
+      <div className="flex items-center space-x-3">
+        {/* Barre de recherche */}
+        <div className="flex items-center rounded-full px-4 py-3 bg-white flex-1">
+          <input type="text" placeholder="Rechercher" className="flex-1 bg-transparent text-sm outline-none placeholder:text-black pl-1" />
+          <SearchIcon className="text-black w-5 h-5" />
+        </div>
+
+        {/* Bouton filtre */}
+        <button className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+          <Settings2 className="text-black w-5 h-5" />{" "}
         </button>
       </div>
-      {/* Categories */}
-      <div className="flex overflow-x-auto pb-2 space-x-2 -mx-4 px-4">
-        {categories.map((category, index) => (
-          <button
-            key={index}
-            className={`whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium ${
-              index === 0 ? "bg-emerald-600 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-            }`}
-          >
-            {category}
-          </button>
-        ))}
+
+      <div className="space-y-3">
+        <h2 className="text-sm font-semibold">Les bases de la réparation textile</h2>
+        <div className="flex space-x-4 overflow-x-auto no-scrollbar">
+          {[1, 2].map((tuto, i) => (
+            <div key={i} className="flex-shrink-0 w-56 bg-white rounded-2xl shadow">
+              <div className="relative">
+                <Image src={`/images/tuto-${i + 1}.jpg`} alt="Tuto" width={224} height={126} className="w-full h-32 object-cover rounded-xl" />
+                <div className="absolute top-1 left-1 bg-white text-black text-xs px-2 py-0.5 rounded-full">06:32</div>
+              </div>
+              <div className="p-2">
+                <p className="text-sm font-medium leading-tight">Que faire de mes textiles et chaussures usagés ?</p>
+                <p className="text-xs text-gray-500">Noé Dumas</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-      {/* Tutorial List */}
-      <div className="grid grid-cols-1 gap-4">
-        <FeaturedCard
-          title="Fix Ripped Jeans Like a Pro"
-          description="Learn the visible mending technique to turn tears into style statements."
-          image="https://images.unsplash.com/photo-1625479144604-ae69462778b7?q=80&w=3088&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          tag="Beginner"
-        />
-        <FeaturedCard
-          title="Sneaker Restoration Guide"
-          description="Bring your favorite kicks back to life with these simple techniques."
-          image="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-          tag="Intermediate"
-        />
-        <FeaturedCard
-          title="Patch Work Basics"
-          description="Learn how to create beautiful patches for your favorite clothes."
-          image="https://images.unsplash.com/photo-1605518216938-7c31b7b14ad0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-          tag="Beginner"
-        />
-        <FeaturedCard
-          title="Button Replacement 101"
-          description="Never lose a button again with these simple sewing techniques."
-          image="https://images.unsplash.com/photo-1519340241574-2cec6aef0c01?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-          tag="Beginner"
-        />
+
+      <div className="space-y-3">
+        <h2 className="text-sm font-semibold">Réparer ses chaussures soi-même</h2>
+        <div className="flex space-x-4 overflow-x-auto no-scrollbar">
+          {[1, 2].map((tuto, i) => (
+            <div key={i} className="flex-shrink-0 w-56 bg-white rounded-2xl shadow">
+              <div className="relative">
+                <Image src={`/images/tuto-${i + 1}.jpg`} alt="Tuto" width={224} height={126} className="w-full h-32 object-cover rounded-xl" />
+                <div className="absolute top-1 left-1 bg-white text-black text-xs px-2 py-0.5 rounded-full">06:32</div>
+              </div>
+              <div className="p-2">
+                <p className="text-sm font-medium leading-tight">Que faire de mes textiles et chaussures usagés ?</p>
+                <p className="text-xs text-gray-500">Noé Dumas</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="space-y-3">
+        <h2 className="text-sm font-semibold">Custom & upcycling créatif</h2>
+        <div className="flex space-x-4 overflow-x-auto no-scrollbar">
+          {[1, 2].map((tuto, i) => (
+            <div key={i} className="flex-shrink-0 w-56 bg-white rounded-2xl shadow">
+              <div className="relative">
+                <Image src={`/images/tuto-${i + 1}.jpg`} alt="Tuto" width={224} height={126} className="w-full h-32 object-cover rounded-xl" />
+                <div className="absolute top-1 left-1 bg-white text-black text-xs px-2 py-0.5 rounded-full">06:32</div>
+              </div>
+              <div className="p-2">
+                <p className="text-sm font-medium leading-tight">Que faire de mes textiles et chaussures usagés ?</p>
+                <p className="text-xs text-gray-500">Noé Dumas</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

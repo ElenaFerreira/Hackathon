@@ -88,7 +88,7 @@ export default function ProfilePage() {
                   alt="Tuto"
                   width={224}
                   height={126}
-                  className="w-full h-28 object-cover rounded-xl border border-solid border-black"
+                  className="w-full h-32 object-cover rounded-xl border border-solid border-black"
                 />
                 <div className="absolute top-1 left-1 bg-white text-black text-xs px-2 py-0.5 rounded-full">06:32</div>
               </div>
