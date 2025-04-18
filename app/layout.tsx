@@ -6,6 +6,20 @@ import { Navigation } from "@/components/Navigation";
 export const metadata: Metadata = {
   title: "Re_pair",
   description: "Donner aux 15-25 ans le pouvoir d’agir par l’auto-réparation – un geste simple, durable et partagé.",
+  openGraph: {
+    title: "Re_pair",
+    description: "Donner aux 15-25 ans le pouvoir d’agir par l’auto-réparation – un geste simple, durable et partagé.",
+    url: "https://hackathon-refashion.vercel.app/",
+    type: "website",
+    images: [
+      {
+        url: "https://hackathon-refashion.vercel.app/images/home-mobile.png",
+        width: 896,
+        height: 1492,
+        alt: "Re_pair",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
