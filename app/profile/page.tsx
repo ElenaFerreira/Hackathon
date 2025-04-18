@@ -81,7 +81,7 @@ export default function ProfilePage() {
         <h2 className="text-sm font-semibold">Mes tutos</h2>
         <div className="flex space-x-4 overflow-x-auto no-scrollbar">
           {[1, 2].map((tuto, i) => (
-            <div key={i} className="flex-shrink-0 w-56 bg-white rounded-2xl shadow">
+            <div key={i} className="flex-shrink-0 w-56 bg-white rounded-2xl shadow mb-1">
               <div className="relative">
                 <Image
                   src={`/images/tuto-${i + 1}.jpg`}
