@@ -28,8 +28,12 @@ export default function Step2Page() {
   };
 
   const handleNext = () => {
-    router.push("/add/step3");
+    if (form.type && form.matiere && form.reparation) {
+      router.push("/add/step3");
+    }
   };
+
+  const isFormValid = form.type && form.matiere && form.reparation;
 
   return (
     <div className="bg-cream space-y-8 mx-auto w-full">
@@ -52,7 +56,7 @@ export default function Step2Page() {
       </div>
 
       <div className="space-y-4">
-        {photo && <img src={photo} alt="Aperçu" className="w-full rounded-xl object-cover" style={{ aspectRatio: "4 / 3" }} />}
+        {photo && <img src={photo} alt="Aperçu" className="w-full max-w-md aspect-[4/3] rounded-xl object-contain mx-auto" />}
         <div className="space-y-3">
           {[
             {
@@ -98,7 +102,13 @@ export default function Step2Page() {
               </select>
             </div>
           ))}
-          <button onClick={handleNext} className="bg-primary text-white px-6 py-2 rounded-full font-medium text-sm mx-auto block cursor-pointer">
+          <button
+            onClick={handleNext}
+            disabled={!isFormValid}
+            className={`px-6 py-2 rounded-full font-medium text-sm mx-auto block cursor-pointer ${
+              isFormValid ? "bg-primary text-white" : "bg-gray-300 text-gray-500 cursor-not-allowed"
+            }`}
+          >
             Suivant
           </button>
         </div>

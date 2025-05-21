@@ -19,7 +19,7 @@ export function Navigation() {
     <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50 rounded-t-2xl mx-auto">
       <div className="mx-auto w-full flex justify-around px-4 py-3 h-20 items-center">
         {navItems.map(({ href, icon: Icon, label }) => {
-          const isActive = pathname === href;
+          const isActive = label === "Scanner" ? pathname.startsWith("/add/") : pathname === href;
           return (
             <Link key={href} href={href} className="flex flex-col items-center justify-between relative w-full">
               <Icon className={`w-6 h-6 mb-1 transition-colors duration-300 ${isActive ? "text-primary" : "text-black"}`} />

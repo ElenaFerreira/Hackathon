@@ -22,8 +22,8 @@ export default function Step1Page() {
       {/* Étapes */}
       <div className="flex items-center justify-between text-xs text-gray-500">
         <div className="flex flex-col items-center space-y-1">
-          <CheckCircleIcon className="w-5 h-5 text-green-500" />
-          <span className="text-green-600 font-semibold">Scan</span>
+          <CheckCircleIcon className="w-5 h-5 text-primary" />
+          <span className="text-primary font-semibold">Scan</span>
         </div>
         <div className="h-px flex-1 bg-gray-300 mx-1"></div>
         <div className="flex flex-col items-center space-y-1">
@@ -41,7 +41,7 @@ export default function Step1Page() {
       <div className="flex flex-col items-center space-y-4">
         <label
           htmlFor="fileInput"
-          className="cursor-pointer w-full aspect-[4/3] bg-gray-100 border border-dashed border-gray-400 rounded-xl flex items-center justify-center text-sm text-gray-500"
+          className="cursor-pointer w-full h-[400px] aspect-[4/3] bg-gray-100 border border-dashed border-gray-400 rounded-xl flex items-center justify-center text-sm text-gray-500"
         >
           📷 Appuyer pour prendre une photo
         </label>
