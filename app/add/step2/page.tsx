@@ -32,7 +32,7 @@ export default function Step2Page() {
   };
 
   return (
-    <div className="bg-cream max-w-md mx-auto px-4 py-6 space-y-6">
+    <div className="bg-cream space-y-8 mx-auto w-full">
       {/* Étapes sous forme d'icônes */}
       <div className="flex items-center justify-between text-xs text-gray-500">
         <div className="flex flex-col items-center space-y-1">

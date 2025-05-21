@@ -1,38 +1,19 @@
 "use client";
-import { SearchIcon, ArrowRightIcon, Settings2 } from "lucide-react";
+import { ArrowRightIcon } from "lucide-react";
 import YouTube from "react-youtube";
+import SearchBar from "../components/SearchBar";
 
 export default function Home() {
   return (
-    <div className="bg-cream px-4 py-6 space-y-8 max-w-md mx-auto w-full">
-      <div className="flex items-center space-x-3">
-        {/* Barre de recherche */}
-        <div className="flex items-center rounded-full px-4 py-3 bg-white flex-1">
-          <input type="text" placeholder="Rechercher" className="flex-1 bg-transparent text-base outline-none placeholder:text-black pl-1" />
-          <SearchIcon className="text-black w-5 h-5" />
-        </div>
-
-        {/* Bouton filtre */}
-        <button className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-          <Settings2 className="text-black w-5 h-5" />
-        </button>
-      </div>
-
-      {/* Mini menu de filtres */}
-      <div className="flex space-x-3 overflow-x-auto no-scrollbar text-sm font-medium text-gray-600 pb-1">
-        {["Voir tout", "Textile", "Chaussure", "Accessoires", "Débutant", "Avancé"].map((cat) => (
-          <div key={cat} className="px-4 py-1 bg-secondary text-gray-700 rounded-full whitespace-nowrap cursor-pointer hover:bg-quaternary">
-            {cat}
-          </div>
-        ))}
-      </div>
+    <div className="bg-cream space-y-8 mx-auto w-full">
+      <SearchBar />
 
       {/* Recommandé pour toi */}
       <section className="space-y-3">
         <div className="flex justify-between items-center">
           <h2 className="text-lg font-semibold">Recommandé pour toi</h2>
           <button className="text-primary text-sm font-medium flex items-center">
-            Voir tout <ArrowRightIcon size={16} className="ml-1" />
+            Tout voir <ArrowRightIcon size={16} className="ml-1" />
           </button>
         </div>
         <div className="flex space-x-4 overflow-x-auto no-scrollbar pb-1">
@@ -59,7 +40,7 @@ export default function Home() {
         <div className="flex justify-between items-center">
           <h2 className="text-lg font-semibold">Tes dernières réparations</h2>
           <button className="text-primary text-sm font-medium flex items-center">
-            Voir tout <ArrowRightIcon size={16} className="ml-1" />
+            Tout voir <ArrowRightIcon size={16} className="ml-1" />
           </button>
         </div>
         <div className="flex space-x-4 overflow-x-auto no-scrollbar pb-1">
@@ -98,7 +79,7 @@ export default function Home() {
         <div className="flex justify-between items-center">
           <h2 className="text-lg font-semibold">Top tuto</h2>
           <button className="text-primary text-sm font-medium flex items-center">
-            Voir tout <ArrowRightIcon size={16} className="ml-1" />
+            Tout voir <ArrowRightIcon size={16} className="ml-1" />
           </button>
         </div>
         <div className="flex space-x-4 overflow-x-auto no-scrollbar pb-1">

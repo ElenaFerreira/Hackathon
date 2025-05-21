@@ -4,7 +4,7 @@ import { PencilIcon, ScanIcon, LeafIcon, CoinsIcon, HammerIcon } from "lucide-re
 
 export default function ProfilePage() {
   return (
-    <div className="bg-cream min-h-screen px-4 py-6 max-w-md mx-auto w-full space-y-4">
+    <div className="bg-cream min-h-screen px-4 py-6 mx-auto w-full space-y-4">
       {/* Avatar */}
       <div className="flex justify-center">
         <div className="relative w-28 h-28">

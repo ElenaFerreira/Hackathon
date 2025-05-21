@@ -34,9 +34,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png" />
         <meta name="apple-mobile-web-app-title" content="Re_pair" />
       </head>
-      <body className="bg-gray-50 flex flex-col min-h-screen">
+      <body className="bg-cream flex flex-col min-h-screen">
         <Header />
-        <main className="flex-1 pb-20 max-w-md mx-auto w-full bg-cream">{children}</main>
+        <main className="flex-1 pb-24 max-w-7xl px-6 py-6 mx-auto w-full bg-cream">{children}</main>
         <Navigation />
       </body>
     </html>
