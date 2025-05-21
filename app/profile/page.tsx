@@ -20,25 +20,6 @@ export default function ProfilePage() {
         <h3 className="font-bold text-lg">Noé Dumas</h3>
       </div>
 
-      {/* Mes réparations */}
-      <div className="space-y-3">
-        <h2 className="text-sm font-semibold">Historique de mes scans</h2>
-        <div className="flex space-x-4 overflow-x-auto no-scrollbar">
-          {[7, 12, 18, 21].map((days, i) => (
-            <div key={i} className="flex-shrink-0 w-32 rounded-2xl overflow-hidden bg-white shadow mb-1">
-              <Image
-                src={`/images/repair-${i + 1}.jpg`}
-                alt="Réparation"
-                width={128}
-                height={96}
-                className="w-full h-[180px] object-cover rounded-bl-2xl rounded-br-2xl"
-              />
-              <p className="text-xs text-center py-2 text-gray-600">il y a {days} jours</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
       {/* Statistiques */}
       <div className="space-y-3">
         <h2 className="text-sm font-semibold">Mes accomplissements </h2>
@@ -73,6 +54,25 @@ export default function ProfilePage() {
           <p className="text-sm">
             <span className="text-primary font-semibold">89€</span> économisés
           </p>
+        </div>
+      </div>
+
+      {/* Mes réparations */}
+      <div className="space-y-3">
+        <h2 className="text-sm font-semibold">Historique de mes scans</h2>
+        <div className="flex space-x-4 overflow-x-auto no-scrollbar">
+          {[7, 12, 18, 21].map((days, i) => (
+            <div key={i} className="flex-shrink-0 w-32 rounded-2xl overflow-hidden bg-white shadow mb-1">
+              <Image
+                src={`/images/repair-${i + 1}.jpg`}
+                alt="Réparation"
+                width={128}
+                height={96}
+                className="w-full h-[180px] object-cover rounded-bl-2xl rounded-br-2xl"
+              />
+              <p className="text-xs text-center py-2 text-gray-600">il y a {days} jours</p>
+            </div>
+          ))}
         </div>
       </div>
 
